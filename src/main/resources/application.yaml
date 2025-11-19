@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: aws
+  datasource:
+    url: jdbc:mysql://localhost:3306/aws_project?serverTimezone=UTC&characterEncoding=UTF-8&useUnicode=true
+    username: root
+    password: 8982
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true

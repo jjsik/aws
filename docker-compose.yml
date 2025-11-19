@@ -1,0 +1,12 @@
+services:
+  aws:
+    container_name: aws
+    image: withfresh/aws-linux:latest
+    ports:
+      - "8080:8080"
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:mysql://mysql-aws.cnkqakyiclr7.ap-northeast-2.rds.amazonaws:com:3306/aws_project
+
+      - SPRING_DATASOURCE_USERNAME=root
+
+      - SPRING_DATASOURCE_PASSWORD=8986
