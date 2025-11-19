@@ -59,14 +59,14 @@ jobs:
           key: ${{ secrets.EC2_KEY }}
           script: |
             # 1. 기존 컨테이너 중지 및 삭제 (에러가 나도 무시하고 진행: || true)
-            docker stop aws || true
-            docker rm aws || true
+            sudo docker stop aws || true
+            sudo docker rm aws || true
 
             # 2. 도커 허브에서 최신 이미지 가져오기
-            docker pull ${{ secrets.DOCKER_HUB_USERNAME }}/aws-linux:latest
+            sudo docker pull ${{ secrets.DOCKER_HUB_USERNAME }}/aws-linux:latest
 
             # 3. 컨테이너 실행 (RDS 정보 환경변수로 주입)
-            docker run -d \
+            sudo docker run -d \
               --name aws \
               -p 8080:8080 \
               -e SPRING_DATASOURCE_URL=jdbc:mysql://${{ secrets.RDS_ENDPOINT }}:3306/aws_project \
