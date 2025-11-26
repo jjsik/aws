@@ -46,5 +46,16 @@ public class ProjectController {
         return ResponseEntity.ok(createdPost);
     }
 
+    @PostMapping("/import-s3")
+    public ResponseEntity<String> importFromS3(@RequestParam("filename") String filename) {
+        try {
+            projectService.importFromS3(filename);
+            return ResponseEntity.ok("S3 파일(" + filename + ")을 DB에 성공적으로 저장했습니다!");
+        } catch (Exception e) {
+            e.printStackTrace();
+            return ResponseEntity.internalServerError().body("오류 발생: " + e.getMessage());
+        }
+    }
+
 
 }

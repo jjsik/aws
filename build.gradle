@@ -36,6 +36,11 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
     implementation 'org.modelmapper:modelmapper:3.2.0'
+	//S3 파일 저장용
+	implementation platform('software.amazon.awssdk:bom:2.20.0')
+	implementation 'software.amazon.awssdk:s3'
+	//CSV 파싱 라이브러리
+	implementation 'com.opencsv:opencsv:5.7.1'
 }
 
 tasks.named('test') {
