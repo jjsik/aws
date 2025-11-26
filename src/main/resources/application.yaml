@@ -12,9 +12,9 @@ spring:
       ddl-auto: update
     show-sql: true
 
-  cloud:
-    aws:
-      s3:
-        bucket: "aws-project-s3-gcf"
-      region:
-        static: "ap-northeast-2"
+cloud:
+  aws:
+    s3:
+      bucket: "aws-project-s3-gcf"
+    region:
+      static: "ap-northeast-2"

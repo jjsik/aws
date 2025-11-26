@@ -31,7 +31,7 @@ public class ProjectService {
     private final ProjectRepository projectRepository;
     private final S3Client s3Client; // S3에서 파일 가져오기 위해 필요
 
-    @Value("${aws-project-s3-gcf}")
+    @Value("${cloud.aws.s3.bucket}")
     private String bucketName;
 
     @Transactional
