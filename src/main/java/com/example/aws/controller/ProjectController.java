@@ -18,13 +18,13 @@ public class ProjectController {
     @Autowired
     private ProjectService projectService;
 
-    // 프로젝트 목록 조회 (페이지네이션 적용: 기본 페이지 번호=0, 페이지 사이즈=10)
+    // 프로젝트 목록 조회
     @GetMapping
     public ResponseEntity<Page<Project>> listPosts(
             @RequestParam(defaultValue = "0") int page,
             @RequestParam(defaultValue = "10") int size,
-            @RequestParam(required = false) String name, // 파라미터가 없으면 null
-            @RequestParam(required = false) String tags) { // 파라미터가 없으면 null
+            @RequestParam(required = false) String name,
+            @RequestParam(required = false) String tags) {
 
         Pageable pageable = PageRequest.of(page, size);
         Page<Project> posts = projectService.getPosts(name, tags, pageable);
