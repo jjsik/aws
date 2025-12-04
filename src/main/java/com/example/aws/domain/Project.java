@@ -42,4 +42,17 @@ public class Project {
         this.url = url;
         this.tags = tags;
     }
+
+    public String getTags() {
+        // tags가 null이면 빈 문자열 "" 반환, 아니면 원래 값 반환
+        return tags == null ? "" : tags;
+    }
+
+    public String getUrl() {
+        return url == null ? "" : url;
+    }
+
+    public String getSource() {
+        return source == null ? "" : source;
+    }
 }
